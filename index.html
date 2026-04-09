@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>その他サービス | 産業技術アカデミー</title>
+  <meta name="description" content="産業技術アカデミーの個別コンサル、AI/DX支援、ISO取得支援、セミナーなど、eラーニング以外のサービスをご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      background: #0f1c35; color: #e8edf8; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(15, 28, 53, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .header-logo { font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; color: #fff; }
+    .header nav { display: flex; align-items: center; gap: 28px; }
+    .header nav a { font-size: 0.82rem; font-weight: 500; color: #b0bdd0; transition: color .2s; }
+    .header nav a:hover, .header nav a.active { color: #ffd54f; }
+    .header .login-btn {
+      display: inline-block; padding: 7px 22px;
+      background: #5b8af5; color: #fff;
+      font-size: 0.8rem; font-weight: 600;
+      border-radius: 6px; transition: background .2s;
+    }
+    .header .login-btn:hover { background: #4a78e0; }
+    .hero {
+      text-align: center; padding: 80px 20px 60px;
+      background: linear-gradient(180deg, rgba(91,138,245,0.08) 0%, transparent 100%);
+    }
+    .hero-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: .16em; color: #ffd54f;
+      border: 1px solid rgba(255,213,79,0.3);
+      border-radius: 20px; padding: 5px 20px; margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+    .hero p { font-size: 0.95rem; color: #8e9baf; max-width: 560px; margin: 0 auto; }
+    .services {
+      max-width: 1040px; margin: 0 auto; padding: 20px 24px 80px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 36px 32px 32px;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      display: flex; flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      border-color: rgba(91,138,245,0.3);
+    }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 20px;
+    }
+    .icon-consul  { background: rgba(91,138,245,0.15); }
+    .icon-aidx    { background: rgba(126,87,255,0.15); }
+    .icon-iso     { background: rgba(38,198,157,0.15); }
+    .icon-seminar { background: rgba(255,167,38,0.15); }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .service-card .tag {
+      display: inline-block; font-size: 0.68rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 10px; margin-bottom: 14px;
+    }
+    .tag-consul  { background: rgba(91,138,245,0.2); color: #8bb4ff; }
+    .tag-aidx    { background: rgba(126,87,255,0.2); color: #b8a4ff; }
+    .tag-iso     { background: rgba(38,198,157,0.2); color: #6ee7c0; }
+    .tag-seminar { background: rgba(255,167,38,0.2); color: #ffc170; }
+    .service-card p { font-size: 0.88rem; color: #8e9baf; line-height: 1.75; flex: 1; }
+    .service-card ul { list-style: none; margin: 12px 0 0; padding: 0; }
+    .service-card ul li { font-size: 0.82rem; color: #a0aec0; padding: 4px 0 4px 18px; position: relative; }
+    .service-card ul li::before { content: "\2726"; position: absolute; left: 0; color: #5b8af5; font-size: 0.65rem; top: 6px; }
+    .service-price { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: #6b7a90; }
+    .service-cta {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 18px;
+      padding: 10px 24px; background: linear-gradient(135deg, #5b8af5, #4a78e0);
+      color: #fff; font-size: 0.84rem; font-weight: 600;
+      border-radius: 24px; transition: opacity .2s; align-self: flex-start;
+    }
+    .service-cta:hover { opacity: 0.85; }
+    .service-cta .arrow { font-size: 0.75rem; }
+    .cta-section { text-align: center; padding: 60px 20px 80px; }
+    .cta-section h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .cta-section p { font-size: 0.9rem; color: #8e9baf; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-block; padding: 14px 40px;
+      background: linear-gradient(135deg, #ffd54f, #ffb300);
+      color: #1a1a2e; font-size: 0.95rem; font-weight: 700;
+      border-radius: 30px; transition: transform .2s, box-shadow .2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,213,79,0.25); }
+    .footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 36px 40px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer nav { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer nav a { font-size: 0.78rem; color: #6b7a90; transition: color .2s; }
+    .footer nav a:hover { color: #b0bdd0; }
+    .footer .copy { font-size: 0.72rem; color: #4a5568; }
+    @media (max-width: 768px) {
+      .header { padding: 0 16px; }
+      .header nav { display: none; }
+      .hero { padding: 60px 16px 40px; }
+      .services { padding: 10px 16px 60px; }
+      .service-card { padding: 28px 24px 24px; }
+      .footer { flex-direction: column; text-align: center; padding: 28px 16px; }
+      .footer nav { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://sangyo-tech.jp/" class="header-logo">産業技術アカデミー</a>
+    <nav>
+      <a href="https://sangyo-tech.jp/">TOP</a>
+      <a href="https://course.sangyo-tech.jp/">コース一覧</a>
+      <a href="https://pricing.sangyo-tech.jp/">料金</a>
+      <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
+      <a href="https://apply.sangyo-tech.jp/">お申込み・お問合せ</a>
+      <a href="https://sangyo-tech-testt.ulizaportal.jp/" class="login-btn">ログイン</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <span class="hero-badge">✦ SERVICES</span>
+    <h1>その他サービス</h1>
+    <p>eラーニング以外にも、企業の品質向上・人材育成を<br>多角的にサポートいたします。</p>
+  </section>
+  <section class="services">
+    <div class="service-card">
+      <div class="service-icon icon-consul">🎯</div>
+      <h3>個別コンサルティング</h3>
+      <span class="tag tag-consul">1on1 サポート</span>
+      <p>品質管理の課題に対し、経験豊富なコンサルタントがマンツーマンで対応。現場に即した改善策を一緒に考えます。</p>
+      <ul>
+        <li>QC活動・品質改善の伴走支援</li>
+        <li>工程管理・検査体制の見直し</li>
+        <li>QC検定対策の個別指導</li>
+      </ul>
+      <div class="service-price">料金：ご要望に応じてお見積り</div>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-aidx">🤖</div>
+      <h3>AI / DX 支援</h3>
+      <span class="tag tag-aidx">デジタル変革</span>
+      <p>製造業・品質管理の現場にAI・デジタル技術を導入し、業務効率化とデータ活用を推進します。</p>
+      <ul>
+        <li>AI活用による品質予測・異常検知</li>
+        <li>業務プロセスのDX化支援</li>
+        <li>データ分析基盤の構築サポート</li>
+      </ul>
+      <div class="service-price">料金：ご要望に応じてお見積り</div>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-iso">📋</div>
+      <h3>ISO 取得支援</h3>
+      <span class="tag tag-iso">認証取得</span>
+      <p>ISO 9001をはじめとする品質マネジメント規格の取得・維持を、準備から審査対応まで一貫してサポートします。</p>
+      <ul>
+        <li>ISO 9001 / 14001 取得コンサル</li>
+        <li>内部監査員の育成研修</li>
+        <li>マニュアル・文書体系の整備</li>
+      </ul>
+      <div class="service-price">料金：ご要望に応じてお見積り</div>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-seminar">🎙️</div>
+      <h3>セミナー・研修</h3>
+      <span class="tag tag-seminar">集合型・オンライン</span>
+      <p>企業向けのカスタマイズ研修やオープンセミナーを実施。実践的なワークショップ形式で即戦力を育成します。</p>
+      <ul>
+        <li>品質管理の基礎〜応用セミナー</li>
+        <li>QC7つ道具・統計的手法研修</li>
+        <li>企業ニーズに合わせたカスタム研修</li>
+      </ul>
+      <div class="service-price">料金：ご要望に応じてお見積り</div>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+  </section>
+  <section class="cta-section">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ご要望をお聞かせいただければ、最適なサービスをご提案いたします。</p>
+    <a href="https://apply.sangyo-tech.jp/?plan=contact" class="cta-btn">📩 お問い合わせはこちら</a>
+  </section>
+  <footer class="footer">
+    <nav>
+      <a href="https://sangyo-tech.jp/">TOP</a>
+      <a href="https://pricing.sangyo-tech.jp/">料金プラン</a>
+      <a href="https://sangyo-tech.jp/legal">特定商取引法に基づく表記</a>
+      <a href="https://sangyo-tech.jp/privacy">プライバシーポリシー</a>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact">お問い合わせ</a>
+    </nav>
+    <span class="copy">&copy; 2025 産業技術アカデミー</span>
+  </footer>
+</body>
+</html>
