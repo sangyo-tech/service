@@ -6,119 +6,57 @@
   <title>その他サービス | 産業技術アカデミー</title>
   <meta name="description" content="産業技術アカデミーの個別コンサル、AI/DX支援、ISO取得支援、セミナーなど、eラーニング以外のサービスをご紹介します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-      background: #0f1c35; color: #e8edf8; line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif; background: #0a0f1e; color: #c8cfe0; line-height: 1.8; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    .header {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 64px;
-      background: rgba(15, 28, 53, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .header-logo { font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; color: #fff; }
-    .header nav { display: flex; align-items: center; gap: 28px; }
-    .header nav a { font-size: 0.82rem; font-weight: 500; color: #b0bdd0; transition: color .2s; }
-    .header nav a:hover, .header nav a.active { color: #ffd54f; }
-    .header .login-btn {
-      display: inline-block; padding: 7px 22px;
-      background: #5b8af5; color: #fff;
-      font-size: 0.8rem; font-weight: 600;
-      border-radius: 6px; transition: background .2s;
-    }
-    .header .login-btn:hover { background: #4a78e0; }
-    .hero {
-      text-align: center; padding: 80px 20px 60px;
-      background: linear-gradient(180deg, rgba(91,138,245,0.08) 0%, transparent 100%);
-    }
-    .hero-badge {
-      display: inline-block; font-size: 0.72rem; font-weight: 700;
-      letter-spacing: .16em; color: #ffd54f;
-      border: 1px solid rgba(255,213,79,0.3);
-      border-radius: 20px; padding: 5px 20px; margin-bottom: 20px;
-    }
-    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
-    .hero p { font-size: 0.95rem; color: #8e9baf; max-width: 560px; margin: 0 auto; }
-    .services {
-      max-width: 1040px; margin: 0 auto; padding: 20px 24px 80px;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; padding: 36px 32px 32px;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-      display: flex; flex-direction: column;
-    }
-    .service-card:hover {
-      transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.25);
-      border-color: rgba(91,138,245,0.3);
-    }
-    .service-icon {
-      width: 56px; height: 56px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; margin-bottom: 20px;
-    }
-    .icon-consul  { background: rgba(91,138,245,0.15); }
-    .icon-aidx    { background: rgba(126,87,255,0.15); }
-    .icon-iso     { background: rgba(38,198,157,0.15); }
-    .icon-seminar { background: rgba(255,167,38,0.15); }
-    .service-card h3 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-    .service-card .tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 600;
-      padding: 2px 10px; border-radius: 10px; margin-bottom: 14px;
-    }
-    .tag-consul  { background: rgba(91,138,245,0.2); color: #8bb4ff; }
-    .tag-aidx    { background: rgba(126,87,255,0.2); color: #b8a4ff; }
-    .tag-iso     { background: rgba(38,198,157,0.2); color: #6ee7c0; }
-    .tag-seminar { background: rgba(255,167,38,0.2); color: #ffc170; }
-    .service-card p { font-size: 0.88rem; color: #8e9baf; line-height: 1.75; flex: 1; }
-    .service-card ul { list-style: none; margin: 12px 0 0; padding: 0; }
-    .service-card ul li { font-size: 0.82rem; color: #a0aec0; padding: 4px 0 4px 18px; position: relative; }
-    .service-card ul li::before { content: "\2726"; position: absolute; left: 0; color: #5b8af5; font-size: 0.65rem; top: 6px; }
-    .service-price { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: #6b7a90; }
-    .service-cta {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 18px;
-      padding: 10px 24px; background: linear-gradient(135deg, #5b8af5, #4a78e0);
-      color: #fff; font-size: 0.84rem; font-weight: 600;
-      border-radius: 24px; transition: opacity .2s; align-self: flex-start;
-    }
-    .service-cta:hover { opacity: 0.85; }
-    .service-cta .arrow { font-size: 0.75rem; }
-    .cta-section { text-align: center; padding: 60px 20px 80px; }
-    .cta-section h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .cta-section p { font-size: 0.9rem; color: #8e9baf; margin-bottom: 28px; }
-    .cta-btn {
-      display: inline-block; padding: 14px 40px;
-      background: linear-gradient(135deg, #ffd54f, #ffb300);
-      color: #1a1a2e; font-size: 0.95rem; font-weight: 700;
-      border-radius: 30px; transition: transform .2s, box-shadow .2s;
-    }
-    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,213,79,0.25); }
-    .footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 36px 40px; display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: 16px;
-    }
-    .footer nav { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer nav a { font-size: 0.78rem; color: #6b7a90; transition: color .2s; }
-    .footer nav a:hover { color: #b0bdd0; }
-    .footer .copy { font-size: 0.72rem; color: #4a5568; }
-    @media (max-width: 768px) {
-      .header { padding: 0 16px; }
-      .header nav { display: none; }
-      .hero { padding: 60px 16px 40px; }
-      .services { padding: 10px 16px 60px; }
-      .service-card { padding: 28px 24px 24px; }
-      .footer { flex-direction: column; text-align: center; padding: 28px 16px; }
-      .footer nav { justify-content: center; }
-    }
+    .header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 68px; background: rgba(10, 15, 30, 0.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(193,163,104,0.12); }
+    .header-logo { font-family: "Noto Serif JP", serif; font-size: 1.1rem; font-weight: 700; letter-spacing: .08em; color: #e8dcc8; }
+    .header nav { display: flex; align-items: center; gap: 32px; }
+    .header nav a { font-size: 0.78rem; font-weight: 400; color: #7a8299; letter-spacing: .04em; transition: color .3s; }
+    .header nav a:hover, .header nav a.active { color: #c1a368; }
+    .header .login-btn { display: inline-block; padding: 7px 24px; background: transparent; color: #c1a368; font-size: 0.78rem; font-weight: 500; letter-spacing: .04em; border: 1px solid rgba(193,163,104,0.4); border-radius: 4px; transition: all .3s; }
+    .header .login-btn:hover { background: rgba(193,163,104,0.1); border-color: #c1a368; }
+    .hero { text-align: center; padding: 100px 20px 80px; position: relative; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(193,163,104,0.06) 0%, transparent 70%), linear-gradient(180deg, rgba(193,163,104,0.03) 0%, transparent 40%); }
+    .hero::before { content: ""; position: absolute; top: 68px; left: 50%; transform: translateX(-50%); width: 1px; height: 48px; background: linear-gradient(180deg, transparent, rgba(193,163,104,0.4), transparent); }
+    .hero-badge { display: inline-block; font-size: 0.65rem; font-weight: 500; letter-spacing: .28em; color: #c1a368; margin-bottom: 24px; margin-top: 24px; }
+    .hero h1 { font-family: "Noto Serif JP", serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #f0ebe0; letter-spacing: .06em; margin-bottom: 20px; }
+    .hero-divider { display: block; width: 48px; height: 1px; background: linear-gradient(90deg, transparent, #c1a368, transparent); margin: 0 auto 24px; }
+    .hero p { font-size: 0.9rem; font-weight: 300; color: #7a8299; max-width: 520px; margin: 0 auto; letter-spacing: .02em; }
+    .services { max-width: 1100px; margin: 0 auto; padding: 0 32px 100px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .service-card { background: linear-gradient(135deg, rgba(193,163,104,0.03) 0%, rgba(255,255,255,0.01) 100%); border: 1px solid rgba(193,163,104,0.1); border-radius: 4px; padding: 44px 40px 36px; transition: all .4s cubic-bezier(.25,.46,.45,.94); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(193,163,104,0.3), transparent); opacity: 0; transition: opacity .4s; }
+    .service-card:hover { border-color: rgba(193,163,104,0.25); box-shadow: 0 24px 48px rgba(0,0,0,0.2), inset 0 1px 0 rgba(193,163,104,0.08); transform: translateY(-2px); }
+    .service-card:hover::before { opacity: 1; }
+    .service-number { font-family: "Noto Serif JP", serif; font-size: 0.7rem; font-weight: 400; color: rgba(193,163,104,0.4); letter-spacing: .12em; margin-bottom: 24px; }
+    .service-card h3 { font-family: "Noto Serif JP", serif; font-size: 1.3rem; font-weight: 600; color: #f0ebe0; letter-spacing: .04em; margin-bottom: 6px; }
+    .service-card .tag { display: inline-block; font-size: 0.62rem; font-weight: 500; letter-spacing: .1em; padding: 3px 12px; border-radius: 2px; margin-bottom: 20px; border: 1px solid; }
+    .tag-consul { border-color: rgba(120,160,220,0.3); color: #8baad0; background: rgba(120,160,220,0.06); }
+    .tag-aidx { border-color: rgba(160,130,220,0.3); color: #a890d0; background: rgba(160,130,220,0.06); }
+    .tag-iso { border-color: rgba(100,190,160,0.3); color: #78c0a8; background: rgba(100,190,160,0.06); }
+    .tag-seminar { border-color: rgba(210,170,100,0.3); color: #c8a868; background: rgba(210,170,100,0.06); }
+    .service-card p { font-size: 0.85rem; font-weight: 300; color: #7a8299; line-height: 1.9; flex: 1; }
+    .service-card ul { list-style: none; margin: 20px 0 0; padding: 0; border-top: 1px solid rgba(193,163,104,0.06); padding-top: 16px; }
+    .service-card ul li { font-size: 0.78rem; font-weight: 400; color: #8e96a8; padding: 5px 0 5px 20px; position: relative; letter-spacing: .02em; }
+    .service-card ul li::before { content: "\2014"; position: absolute; left: 0; color: rgba(193,163,104,0.35); font-size: 0.7rem; top: 5px; }
+    .service-price { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(193,163,104,0.06); font-size: 0.76rem; font-weight: 400; color: #5a6478; letter-spacing: .02em; }
+    .service-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 10px 28px; background: transparent; color: #c1a368; font-size: 0.78rem; font-weight: 500; letter-spacing: .06em; border: 1px solid rgba(193,163,104,0.3); border-radius: 2px; transition: all .3s; align-self: flex-start; }
+    .service-cta:hover { background: rgba(193,163,104,0.08); border-color: #c1a368; }
+    .service-cta .arrow { font-size: 0.72rem; transition: transform .3s; }
+    .service-cta:hover .arrow { transform: translateX(3px); }
+    .section-divider { display: block; width: 100%; max-width: 200px; height: 1px; background: linear-gradient(90deg, transparent, rgba(193,163,104,0.2), transparent); margin: 0 auto 80px; border: none; }
+    .cta-section { text-align: center; padding: 80px 20px 100px; position: relative; }
+    .cta-section h2 { font-family: "Noto Serif JP", serif; font-size: 1.5rem; font-weight: 600; color: #f0ebe0; letter-spacing: .06em; margin-bottom: 14px; }
+    .cta-section p { font-size: 0.85rem; font-weight: 300; color: #7a8299; margin-bottom: 36px; letter-spacing: .02em; }
+    .cta-btn { display: inline-block; padding: 14px 48px; background: linear-gradient(135deg, #c1a368, #a8884c); color: #0a0f1e; font-size: 0.85rem; font-weight: 600; letter-spacing: .08em; border-radius: 2px; transition: all .3s; box-shadow: 0 4px 20px rgba(193,163,104,0.15); }
+    .cta-btn:hover { box-shadow: 0 8px 32px rgba(193,163,104,0.25); transform: translateY(-1px); }
+    .footer { border-top: 1px solid rgba(193,163,104,0.08); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer nav { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer nav a { font-size: 0.72rem; color: #4a5468; letter-spacing: .02em; transition: color .3s; }
+    .footer nav a:hover { color: #8e96a8; }
+    .footer .copy { font-size: 0.68rem; color: #2e3548; letter-spacing: .04em; }
+    @media (max-width: 768px) { .header { padding: 0 20px; } .header nav { display: none; } .hero { padding: 80px 20px 60px; } .hero::before { display: none; } .services { padding: 0 20px 60px; grid-template-columns: 1fr; } .service-card { padding: 32px 28px 28px; } .footer { flex-direction: column; text-align: center; padding: 32px 20px; } .footer nav { justify-content: center; } }
   </style>
 </head>
 <body>
@@ -134,68 +72,54 @@
     </nav>
   </header>
   <section class="hero">
-    <span class="hero-badge">✦ SERVICES</span>
-    <h1>その他サービス</h1>
-    <p>eラーニング以外にも、企業の品質向上・人材育成を<br>多角的にサポートいたします。</p>
+    <span class="hero-badge">PROFESSIONAL SERVICES</span>
+    <h1>プロフェッショナルサービス</h1>
+    <span class="hero-divider"></span>
+    <p>eラーニングの枠を超え、貴社の品質経営を<br>多角的にご支援いたします。</p>
   </section>
   <section class="services">
     <div class="service-card">
-      <div class="service-icon icon-consul">🎯</div>
+      <span class="service-number">SERVICE 01</span>
       <h3>個別コンサルティング</h3>
-      <span class="tag tag-consul">1on1 サポート</span>
-      <p>品質管理の課題に対し、経験豊富なコンサルタントがマンツーマンで対応。現場に即した改善策を一緒に考えます。</p>
-      <ul>
-        <li>QC活動・品質改善の伴走支援</li>
-        <li>工程管理・検査体制の見直し</li>
-        <li>QC検定対策の個別指導</li>
-      </ul>
+      <span class="tag tag-consul">CONSULTING</span>
+      <p>品質管理の課題に対し、経験豊富なコンサルタントがマンツーマンで対応。貴社の現場に即した改善策を、共に策定いたします。</p>
+      <ul><li>QC活動・品質改善の伴走支援</li><li>工程管理・検査体制の見直し</li><li>QC検定対策の個別指導</li></ul>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
-      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-aidx">🤖</div>
+      <span class="service-number">SERVICE 02</span>
       <h3>AI / DX 支援</h3>
-      <span class="tag tag-aidx">デジタル変革</span>
-      <p>製造業・品質管理の現場にAI・デジタル技術を導入し、業務効率化とデータ活用を推進します。</p>
-      <ul>
-        <li>AI活用による品質予測・異常検知</li>
-        <li>業務プロセスのDX化支援</li>
-        <li>データ分析基盤の構築サポート</li>
-      </ul>
+      <span class="tag tag-aidx">DIGITAL TRANSFORMATION</span>
+      <p>製造業・品質管理の現場にAI・デジタル技術を導入し、業務効率化とデータドリブンな意思決定を実現いたします。</p>
+      <ul><li>AI活用による品質予測・異常検知</li><li>業務プロセスのDX化支援</li><li>データ分析基盤の構築サポート</li></ul>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
-      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-iso">📋</div>
+      <span class="service-number">SERVICE 03</span>
       <h3>ISO 取得支援</h3>
-      <span class="tag tag-iso">認証取得</span>
-      <p>ISO 9001をはじめとする品質マネジメント規格の取得・維持を、準備から審査対応まで一貫してサポートします。</p>
-      <ul>
-        <li>ISO 9001 / 14001 取得コンサル</li>
-        <li>内部監査員の育成研修</li>
-        <li>マニュアル・文書体系の整備</li>
-      </ul>
+      <span class="tag tag-iso">CERTIFICATION</span>
+      <p>ISO 9001をはじめとする品質マネジメント規格の取得・維持を、準備段階から審査対応まで一貫してお引き受けいたします。</p>
+      <ul><li>ISO 9001 / 14001 取得コンサル</li><li>内部監査員の育成研修</li><li>マニュアル・文書体系の整備</li></ul>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
-      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-seminar">🎙️</div>
+      <span class="service-number">SERVICE 04</span>
       <h3>セミナー・研修</h3>
-      <span class="tag tag-seminar">集合型・オンライン</span>
-      <p>企業向けのカスタマイズ研修やオープンセミナーを実施。実践的なワークショップ形式で即戦力を育成します。</p>
-      <ul>
-        <li>品質管理の基礎〜応用セミナー</li>
-        <li>QC7つ道具・統計的手法研修</li>
-        <li>企業ニーズに合わせたカスタム研修</li>
-      </ul>
+      <span class="tag tag-seminar">SEMINAR &amp; TRAINING</span>
+      <p>企業様向けのカスタマイズ研修やオープンセミナーを実施。実践的なワークショップ形式で、確かな実務力を涵養いたします。</p>
+      <ul><li>品質管理の基礎〜応用セミナー</li><li>QC7つ道具・統計的手法研修</li><li>企業ニーズに合わせたカスタム研修</li></ul>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
-      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">→</span></a>
+      <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
   </section>
+  <hr class="section-divider">
   <section class="cta-section">
-    <h2>まずはお気軽にご相談ください</h2>
-    <p>ご要望をお聞かせいただければ、最適なサービスをご提案いたします。</p>
-    <a href="https://apply.sangyo-tech.jp/?plan=contact" class="cta-btn">📩 お問い合わせはこちら</a>
+    <h2>まずはご相談ください</h2>
+    <p>貴社のご要望をお伺いした上で、最適なサービスをご提案いたします。</p>
+    <a href="https://apply.sangyo-tech.jp/?plan=contact" class="cta-btn">お問い合わせはこちら</a>
   </section>
   <footer class="footer">
     <nav>
