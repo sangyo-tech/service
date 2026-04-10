@@ -42,6 +42,13 @@
     .plan-block + .plan-block { margin-top: 10px; }
     .plan-name { display: block; font-family: "Noto Serif JP", serif; font-size: 1rem; font-weight: 700; color: #f0ebe0; margin-bottom: 4px; letter-spacing: .03em; }
     .plan-desc { display: block; font-size: 0.92rem; font-weight: 400; color: #b8c0d0; line-height: 1.75; }
+    .plan-header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+    .plan-title-wrap { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .plan-price { white-space: nowrap; font-family: "Noto Serif JP", serif; font-weight: 700; color: #7dd8f5; letter-spacing: .02em; }
+    .plan-price .num { font-size: 1.55rem; line-height: 1; }
+    .plan-price .unit { font-size: 0.78rem; font-weight: 500; color: #a0c8dc; margin-left: 2px; }
+    .plan-badge { display: inline-block; padding: 2px 8px; background: linear-gradient(135deg, #d4b87a, #c1a368); color: #1a1a1a; font-size: 0.68rem; font-weight: 700; border-radius: 10px; letter-spacing: .08em; }
+    .plan-block.recommended { background: rgba(212,184,122,0.08); border-left-color: #d4b87a; }
     .service-card p { font-size: 1.02rem; font-weight: 400; color: #d4dae8; line-height: 1.85; flex: 1; }
     .service-card ul { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid rgba(193,163,104,0.15); padding-top: 18px; }
     .service-card ul li { font-size: 0.96rem; font-weight: 400; color: #c0c8d8; padding: 7px 0 7px 22px; position: relative; letter-spacing: .02em; line-height: 1.7; }
@@ -142,9 +149,9 @@
       <h3>顧問契約</h3>
       <span class="tag tag-advisory">ADVISORY</span>
       <p>品質管理や製造現場で起きる「困った」に、経験豊富な有識者が右腕としてお応えします。関与度合いに応じて、3つのプランからお選びいただけます。</p>
-      <div class="plan-block"><span class="plan-name">オンライン顧問</span><span class="plan-desc">いつでもオンラインで質問可能。有識者を右腕として気軽にご相談いただけます。</span></div>
-      <div class="plan-block"><span class="plan-name">顧問ライト</span><span class="plan-desc">オンライン顧問に加え、月1回の現場訪問＋月3回のオンラインミーティングで伴走します。</span></div>
-      <div class="plan-block"><span class="plan-name">顧問</span><span class="plan-desc">オンライン顧問に加え、月4回の現場訪問で深く入り込んでご支援します。</span></div>
+      <div class="plan-block"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">オンライン顧問</span></div><span class="plan-price"><span class="num">10</span><span class="unit">万円/月</span></span></div><span class="plan-desc">いつでもオンラインで質問可能。有識者を右腕として気軽にご相談いただけます。</span></div>
+      <div class="plan-block recommended"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">顧問ライト</span><span class="plan-badge">おすすめ</span></div><span class="plan-price"><span class="num">35</span><span class="unit">万円/月</span></span></div><span class="plan-desc">オンライン顧問に加え、月1回の現場訪問＋月3回のオンラインミーティングで伴走します。</span></div>
+      <div class="plan-block"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">顧問</span></div><span class="plan-price"><span class="num">60</span><span class="unit">万円/月</span></span></div><span class="plan-desc">オンライン顧問に加え、月4回の現場訪問で深く入り込んでご支援します。</span></div>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
       <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
