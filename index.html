@@ -49,6 +49,12 @@
     .plan-price .unit { font-size: 0.78rem; font-weight: 500; color: #a0c8dc; margin-left: 2px; }
     .plan-badge { display: inline-block; padding: 2px 8px; background: linear-gradient(135deg, #d4b87a, #c1a368); color: #1a1a1a; font-size: 0.68rem; font-weight: 700; border-radius: 10px; letter-spacing: .08em; }
     .plan-block.recommended { background: rgba(212,184,122,0.08); border-left-color: #d4b87a; }
+    .hl-keyword { color: #7dd8f5; font-weight: 700; font-style: normal; }
+    .examples-label { display: block; margin-top: 22px; font-size: 0.78rem; font-weight: 600; color: #a0a8bc; letter-spacing: .12em; text-transform: uppercase; }
+    .examples-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-top: 10px; padding: 14px 16px; background: rgba(193,163,104,0.05); border-left: 2px solid rgba(212,184,122,0.5); border-radius: 0 4px 4px 0; }
+    .examples-grid div { font-size: 0.92rem; font-weight: 400; color: #c0c8d8; line-height: 1.7; padding-left: 14px; position: relative; }
+    .examples-grid div::before { content: '▸'; position: absolute; left: 0; color: #7dd8f5; font-size: 0.85rem; }
+    @media (max-width: 640px) { .examples-grid { grid-template-columns: 1fr; } }
     .service-card p { font-size: 1.02rem; font-weight: 400; color: #d4dae8; line-height: 1.85; flex: 1; }
     .service-card ul { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid rgba(193,163,104,0.15); padding-top: 18px; }
     .service-card ul li { font-size: 0.96rem; font-weight: 400; color: #c0c8d8; padding: 7px 0 7px 22px; position: relative; letter-spacing: .02em; line-height: 1.7; }
@@ -141,6 +147,15 @@
       <span class="tag tag-tool">CUSTOM TOOL</span>
       <p>中小企業様向けに、高機能で操作が複雑な既製ツールではなく、本当に必要な機能だけに絞ったシンプルなツールをご提供します。業務フローの見直しと合わせて導入することで、コストダウン・業務効率化・利益率アップを同時に実現します。</p>
       <ul><li>業務フローを見直し、必要機能を厳選</li><li>現場が迷わないシンプルな画面設計</li><li>無駄なライセンス費用の削減</li></ul>
+     <span class="examples-label">CASE EXAMPLES — 実装実績例</span>
+     <div class="examples-grid">
+       <div>見積り自動化ツール</div>
+       <div>受発注（メール自動化）ツール</div>
+       <div>案件管理ツール</div>
+       <div>歯科医院カルテ電子化</div>
+       <div>金融業の顧客管理ツール</div>
+       <div>動画マニュアル管理サイト</div>
+     </div>
       <div class="service-price">料金：ご要望に応じてお見積り</div>
       <a href="https://apply.sangyo-tech.jp/?plan=contact" class="service-cta">お問い合わせ <span class="arrow">&rarr;</span></a>
     </div>
@@ -148,7 +163,7 @@
       <span class="service-number">SERVICE 06</span>
       <h3>顧問契約</h3>
       <span class="tag tag-advisory">ADVISORY</span>
-      <p>品質管理や製造現場で起きる「困った」に、経験豊富な有識者が右腕としてお応えします。関与度合いに応じて、3つのプランからお選びいただけます。</p>
+      <p>いつでも解約可能。専門家を必要な分だけ活用できる、<strong class="hl-keyword">雇用リスクゼロ</strong>の人気サービスです。品質管理や製造現場の「困った」に、経験豊富な有識者が右腕としてお応えします。</p>
       <div class="plan-block"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">オンライン顧問</span></div><span class="plan-price"><span class="num">10</span><span class="unit">万円/月</span></span></div><span class="plan-desc">いつでもオンラインで質問可能。有識者を右腕として気軽にご相談いただけます。</span></div>
       <div class="plan-block recommended"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">顧問ライト</span><span class="plan-badge">おすすめ</span></div><span class="plan-price"><span class="num">35</span><span class="unit">万円/月</span></span></div><span class="plan-desc">オンライン顧問に加え、月1回の現場訪問＋月3回のオンラインミーティングで伴走します。</span></div>
       <div class="plan-block"><div class="plan-header"><div class="plan-title-wrap"><span class="plan-name">顧問</span></div><span class="plan-price"><span class="num">60</span><span class="unit">万円/月</span></span></div><span class="plan-desc">オンライン顧問に加え、月4回の現場訪問で深く入り込んでご支援します。</span></div>
