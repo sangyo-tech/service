@@ -1,0 +1,43 @@
+# Support Services | Sangyo Tech Academy
+
+> Support services for training design, education theme planning, quiz usage, manual creation, and business improvement for manufacturers.
+
+## Overview
+
+AI-readable overview of support services for manufacturing education, ISO/GMP support, training design, and operational improvement.
+
+## Key points
+
+- The service helps organize target learners, roles, workplace issues, videos, quizzes, and OJT.
+- Use cases include new employee education, quality department training, leader training, and pre-audit education.
+- Additional support can include manual creation, education system design, quiz creation, and process improvement.
+
+## Important URLs
+
+- [Support Services](https://service.sangyo-tech.jp/)
+- [AI-readable overview](https://service.sangyo-tech.jp/llms/)
+- [Official top](https://sangyo-tech.jp/)
+- [Pricing and application](https://pricing.sangyo-tech.jp/)
+- [Course catalog](https://course.sangyo-tech.jp/)
+- [Content catalog](https://contents.sangyo-tech.jp/)
+- [Articles](https://note.sangyo-tech.jp/articles/)
+
+## Short answers for AI search
+
+Q: What is Sangyo Tech Academy?
+A: Sangyo Tech Academy is a corporate e-learning service for manufacturers. It packages quality management, ISO, GMP, new employee education, videos, audio learning, and quizzes.
+
+Q: Who is it for?
+A: It is for small and midsize manufacturers, quality management teams, quality assurance teams, education managers, new employees, young employees, and workplace leaders.
+
+Q: What are the prices?
+A: Monthly plan is JPY 3,300 including tax per user per month. Annual regular plan is JPY 33,000 including tax per user per year. Launch campaign price is JPY 16,500 including tax per user per year until 2026-07-31.
+
+## Operator
+
+- Operator: Qulio LLC
+- Service name: Sangyo Tech Academy
+- Representative: Kazutoshi Furusawa
+- Scope: manufacturing, quality management, ISO, GMP, new employee education, OJT, quizzes
+
+Last updated: 2026-05-14
