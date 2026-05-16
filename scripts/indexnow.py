@@ -8,6 +8,8 @@ HOST = "service.sangyo-tech.jp"
 ENDPOINT = "https://api.indexnow.org/indexnow"
 URLS = [
     "https://service.sangyo-tech.jp/",
+    "https://service.sangyo-tech.jp/komon/",
+    "https://service.sangyo-tech.jp/ai-training/",
     "https://service.sangyo-tech.jp/llms/",
     "https://service.sangyo-tech.jp/sitemap.xml",
 ]
